@@ -1,0 +1,66 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url('https://media0.giphy.com/headers/clubdoauto/fjDIBvQjjE3G.gif');
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.count {
+    box-shadow: -3px -3px 9px #aaa9a9a2,
+        3px 3px 7px rgba(147, 149, 151, 0.671);
+    padding: 70px 100px;
+    border-radius: 5px;
+}
+
+.count h1 {
+    color: rgb(255, 216, 216);
+    border: 1px solid rgba(255, 255, 255, 0.438);
+    border-radius: 20px;
+    padding: 0px 70px;
+}
+
+.count h2 {
+    color: #FFF0D1;
+    margin: 20px 0;
+}
+
+.count h2 span {
+    color: #B17457;
+}
+
+.count .reset {
+    margin: 0px 10px;
+    color: #7E60BF;
+    border: none;
+    background-color: #E4B1F0;
+}
+
+.count .reset:hover {
+    background-color: #7E60BF;
+    border: none;
+    padding: 0 20px;
+    color: #E4B1F0;
+    transition: all 0.3s linear;
+}
+
+.count button {
+    color: #795757;
+    border: none;
+    background-color: #FFF0D1;
+}
+
+.count button:hover {
+    background-color: #795757;
+    border: none;
+    padding: 0 20px;
+    color: #FFF0D1;
+    transition: all 0.3s linear;
+}
