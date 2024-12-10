@@ -1,0 +1,57 @@
+body {
+    background-color: #433878;
+}
+
+.App {
+    text-align: center;
+    background-color: #E4B1F0;
+    padding: 17px;
+    border-radius: 20px;
+}
+
+input,
+textarea,
+select {
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+    height: 30px;
+    margin-bottom: 10px;
+    margin-top: 3px;
+}
+
+label {
+    color: #433878;
+    font-weight: bold;
+}
+
+button {
+    margin-top: 10px;
+    background-color: #433878;
+    color: #FFE1FF;
+    border: 1px solid #433878;
+}
+
+button:hover {
+    background-color: #FFE1FF;
+    color: #433878;
+    transition: all 0.5s linear;
+    border: 1px solid #433878;
+}
+
+.reviews {
+    margin-top: 20px;
+    background-color: #FFE1FF;
+    border-radius: 10px;
+}
+
+.review h2,
+p {
+    color: #433878;
+}
+
+.review {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
