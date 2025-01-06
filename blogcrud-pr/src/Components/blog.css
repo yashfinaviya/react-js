@@ -1,0 +1,107 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #FFDBB5 !important;
+}
+
+a {
+    color: #914F1E !important;
+    font-weight: bolder;
+}
+
+body{
+    background-image: url('./public/bg.jpg') !important;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.card{
+    background-color: antiquewhite;
+}
+/* ADDBLOG  */
+.addblog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-weight: bolder;
+    background-color: #8D493A;
+    width: 110px;
+    height: 35px;
+    border: none;
+}
+
+.addblog:hover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    border-radius: 20px;
+    border: none;
+    background-color: #ff2f00;
+    transition: all 0.5s linear;
+    font-size: 19px;
+}
+
+/* HOME  */
+
+.cardimg {
+    width: 100%;
+    height: 230px;
+}
+
+.desc {
+    font-size: 12px;
+}
+
+.authorname {
+    font-size: 15px;
+}
+
+.authorimg {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.category {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #8D493A;
+    border: none;
+    color: antiquewhite;
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+/* FORM  */
+
+input {
+    background-color: #ddbdb6 !important;
+    border: none !important;
+    color: #914F1E !important;
+}
+
+label {
+    color: #153448 !important;
+    font-size: 18px !important;
+    font-weight: bolder;
+}
+
+h2{
+    color: #721703 ;
+    border: 2px #ddbdb6 solid;
+    width: 50%;
+    margin-left: 25%;
+    padding: 15px;
+    border-radius: 50px;
+}
