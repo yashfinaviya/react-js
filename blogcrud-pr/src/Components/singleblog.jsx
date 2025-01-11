@@ -35,7 +35,7 @@ const Singleblog = () => {
     }
     return (
         <>
-            <Container className='d-flex flex-wrap mt-2'>
+            <Container className='d-flex flex-wrap mt-2 cardhome'>
                 <Card style={{ width: '18rem' }}>
                     <Card.Img variant="top" src={blog.img} className='cardimg' />
                     <hr />

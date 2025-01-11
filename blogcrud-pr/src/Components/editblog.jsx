@@ -36,13 +36,14 @@ const Editblog = () => {
         setShowError(false);
 
         if (!inputForm.img) newErrors.img = "Image Url is required.";
-        if (!inputForm.title) newErrors.title = "Blog Title is required.";
+        if (!inputForm.category) newErrors.category = "Category is required.";
+        if (!inputForm.date) newErrors.date = "Date is required.";
+        if (!inputForm.title) newErrors.title = "Title is required.";
         if (!inputForm.desc) newErrors.desc = "Blog Description is required.";
-        if (!inputForm.name) newErrors.name = "Author name is required.";
-        if (!inputForm.type) newErrors.type = "Blog Type is required.";
-        if (!inputForm.date) newErrors.date = "Blog Date is required.";
+        if (!inputForm.authorimg) newErrors.authorimg = "Author Image is required.";
+        if (!inputForm.authorname) newErrors.authorname = "Author Name is required.";
         else if (new Date(inputForm.date) > new Date()) {
-            newErrors.date = "Blog date cannot be in future.";
+            newErrors.date = "Blog date cannot br in future.";
         }
 
         setErrors(newErrors);
@@ -58,6 +59,7 @@ const Editblog = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
+        if (!validateForm()) return;
 
         let getData = getLocalData();
         let updateData = getData.map((blog) => {
@@ -101,6 +103,9 @@ const Editblog = () => {
                                 isInvalid={!!errors.img}
 
                             />
+                            <Form.Control.Feedback type="invalid">
+                                {errors.img}
+                            </Form.Control.Feedback>
                         </Col>
                     </Form.Group>
 
@@ -120,6 +125,9 @@ const Editblog = () => {
                                 isInvalid={!!errors.category}
 
                             />
+                            <Form.Control.Feedback type="invalid">
+                                {errors.category}
+                            </Form.Control.Feedback>
                         </Col>
                     </Form.Group>
 
@@ -139,6 +147,9 @@ const Editblog = () => {
                                 isInvalid={!!errors.date}
 
                             />
+                            <Form.Control.Feedback type="invalid">
+                                {errors.date}
+                            </Form.Control.Feedback>
                         </Col>
                     </Form.Group>
 
@@ -157,6 +168,9 @@ const Editblog = () => {
                                 isInvalid={!!errors.title}
 
                             />
+                            <Form.Control.Feedback type="invalid">
+                                {errors.title}
+                            </Form.Control.Feedback>
                         </Col>
                     </Form.Group>
 
@@ -175,6 +189,9 @@ const Editblog = () => {
                                 isInvalid={!!errors.desc}
 
                             />
+                            <Form.Control.Feedback type="invalid">
+                                {errors.desc}
+                            </Form.Control.Feedback>
                         </Col>
                     </Form.Group>
 
@@ -194,6 +211,9 @@ const Editblog = () => {
                                 isInvalid={!!errors.authorimg}
 
                             />
+                            <Form.Control.Feedback type="invalid">
+                                {errors.authorimg}
+                            </Form.Control.Feedback>
                         </Col>
                     </Form.Group>
 
@@ -213,6 +233,9 @@ const Editblog = () => {
                                 isInvalid={!!errors.authorname}
 
                             />
+                            <Form.Control.Feedback type="invalid">
+                                {errors.authorname }
+                            </Form.Control.Feedback>
                         </Col>
                     </Form.Group>
 

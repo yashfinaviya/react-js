@@ -18,12 +18,41 @@ function Blog() {
         authorname: "",
     }
     const [inputForm, setInputForm] = useState(initialState);
+    const [errors, setErrors] = useState({});
+    const [showError, setShowError] = useState(false);
 
     console.log(inputForm);
+    const validateForm = () => {
+        const newErrors = {};
+        setShowError(false);
+
+        if (!inputForm.img) newErrors.img = "Image Url is required.";
+        if (!inputForm.category) newErrors.category = "Category is required.";
+        if (!inputForm.date) newErrors.date = "Date is required.";
+        if (!inputForm.title) newErrors.title = "Title is required.";
+        if (!inputForm.desc) newErrors.desc = "Blog Description is required.";
+        if (!inputForm.authorimg) newErrors.authorimg = "Author Image is required.";
+        if (!inputForm.authorname) newErrors.authorname = "Author Name is required.";
+        else if (new Date(inputForm.date) > new Date()) {
+            newErrors.date = "Blog date cannot br in future.";
+        }
+
+        setErrors(newErrors);
+
+        if (Object.keys(newErrors).length > 0) {
+            setShowError(true);
+            return false;
+        }
+
+        return true;
+    };
 
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        if (!validateForm()) return;
+
         let getData = getLocalData();
         let id = generateUniqueID({
             length: 6,
@@ -67,7 +96,11 @@ function Blog() {
                                 name="img"
                                 value={inputForm.img}
                                 onChange={handleChanged}
+                                isInvalid={!!errors.img}
                             />
+                            <Form.Control.Feedback type="invalid">
+                                {errors.img}
+                            </Form.Control.Feedback>
                         </Col>
                     </Form.Group>
 
@@ -84,7 +117,11 @@ function Blog() {
                                 name="category"
                                 value={inputForm.category}
                                 onChange={handleChanged}
+                                isInvalid={!!errors.category}
                             />
+                            <Form.Control.Feedback type="invalid">
+                                {errors.category}
+                            </Form.Control.Feedback>
                         </Col>
                     </Form.Group>
 
@@ -101,7 +138,11 @@ function Blog() {
                                 name="date"
                                 value={inputForm.date}
                                 onChange={handleChanged}
+                                isInvalid={!!errors.date}
                             />
+                            <Form.Control.Feedback type="invalid">
+                                {errors.date}
+                            </Form.Control.Feedback>
                         </Col>
                     </Form.Group>
 
@@ -117,7 +158,11 @@ function Blog() {
                                 name="title"
                                 value={inputForm.title}
                                 onChange={handleChanged}
+                                isInvalid={!!errors.title}
                             />
+                            <Form.Control.Feedback type="invalid">
+                                {errors.title}
+                            </Form.Control.Feedback>
                         </Col>
                     </Form.Group>
 
@@ -133,7 +178,11 @@ function Blog() {
                                 name="desc"
                                 value={inputForm.desc}
                                 onChange={handleChanged}
+                                isInvalid={!!errors.desc}
                             />
+                            <Form.Control.Feedback type="invalid">
+                                {errors.desc}
+                            </Form.Control.Feedback>
                         </Col>
                     </Form.Group>
 
@@ -150,7 +199,11 @@ function Blog() {
                                 name="authorimg"
                                 value={inputForm.authorimg}
                                 onChange={handleChanged}
+                                isInvalid={!!errors.authorimg}
                             />
+                            <Form.Control.Feedback type="invalid">
+                                {errors.authorimg}
+                            </Form.Control.Feedback>
                         </Col>
                     </Form.Group>
 
@@ -167,7 +220,11 @@ function Blog() {
                                 name="authorname"
                                 value={inputForm.authorname}
                                 onChange={handleChanged}
+                                isInvalid={!!errors.authorname}
                             />
+                            <Form.Control.Feedback type="invalid">
+                                {errors.authorname}
+                            </Form.Control.Feedback>
                         </Col>
                     </Form.Group>
 
