@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.form-label {
+    color: #1A3636;
+    border-radius: 10px;
+    background-color: #67cfcf;
+}
+
+.form-control {
+    background-color: #1A3636;
+    color: #67cfcf;
+    border: none;
+    outline: none;
+}
+
+.form-control:focus {
+    background-color: #345555;
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+::placeholder {
+    color: white !important;
+}
+body {
+    background-image: url('./public/bg.jpg') !important;
+    width: 100%;
+    height: 100vh;
+}
+
+.card {
+    border-radius: 15px;
+    background-color: #1A3636;
+    box-shadow: #67cfcf 0px 5px 15px;
+}
+
+.img {
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.body {
+    text-align: left;
+
+}
+
+.edit,
+.editbtn {
+    background-color: yellow;
+    border: none;
+    color: rgb(87, 87, 0);
+    transition: transform .5s;
+}
+
+.edit:hover,
+.edit:hover .editbtn {
+    background-color: rgb(87, 87, 0);
+    border: none;
+    color: yellow;
+    transform: scale(1.5);
+}
+
+.delete,
+.deletebtn {
+    background-color: rgb(230, 97, 97);
+    border: none;
+    transition: transform .5s;
+    color: rgb(104, 0, 0);
+}
+
+.delete:hover,
+.delete:hover .deletebtn {
+    background-color: rgb(104, 0, 0);
+    border: none;
+    color: rgb(230, 97, 97);
+    transform: scale(1.5);
+}
+
+.navbar {
+    background-color: #1A3636 !important;
+    border-radius: 20px;
+}
+
+
+.bttn {
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 45px;
+    max-width: 160px;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.bttn-1 {
+    font-weight: 100;
+
+    svg {
+        height: 45px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+
+    rect {
+        fill: none;
+        stroke: #fff;
+        stroke-width: 2;
+        stroke-dasharray: 422, 0;
+        transition: all 0.35s linear;
+    }
+}
+
+.bttn-1:hover {
+    font-weight: 900;
+    letter-spacing: 1px;
+
+    rect {
+        stroke-width: 5;
+        stroke-dasharray: 15, 310;
+        stroke-dashoffset: 48;
+        transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+}
+
+.navbar-brand:hover,
+.nav-link:hover {
+    color: white !important;
+}

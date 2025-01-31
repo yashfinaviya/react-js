@@ -68,10 +68,10 @@ const Home = () => {
                       onClick={() => handelEdit(product.id)}
                       variant="warning"
                     >
-                      <FaEdit className="editbtn"/>
+                      <FaEdit className="editbtn" />
                     </Button>{" "}
                     <Button
-                    className="delete"
+                      className="delete"
                       onClick={() => handelDelete(product.id)}
                       variant="danger"
                     >
