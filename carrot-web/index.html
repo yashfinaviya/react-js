@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/public/favicon.png" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrot - Multipurpose eCommerce HTML Template</title>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <!-- BACK TO TOP  -->
+
+  <button class="btn btn-sm btn-primary rounded-circle position-fixed bottom-0 end-0 translate-middle d-none fs-4"
+    onclick="scrollToTop()" id="back-to-up">
+    <i class="ri-arrow-up-double-line" aria-hidden="true"></i>
+  </button>
+
+  <script type="module" src="/src/main.jsx"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</body>
+
+<script>
+  $(window).scroll(function () {
+
+    // HEADER 
+
+    if ($(this).scrollTop() > 100) {
+      $("header").addClass("mab");
+    }
+    else {
+      $("header").removeClass("mab");
+    }
+  });
+
+  // Back TO TOP
+
+  window.onscroll = () => {
+    toggleTopButton();
+  }
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function toggleTopButton() {
+    if (document.body.scrollTop > 20 ||
+      document.documentElement.scrollTop > 20) {
+      document.getElementById('back-to-up').classList.remove('d-none');
+    } else {
+      document.getElementById('back-to-up').classList.add('d-none');
+    }
+  }
+</script>
+
+</html>

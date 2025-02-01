@@ -1,0 +1,79 @@
+import React, { useState, useEffect } from "react";
+import { Card } from "react-bootstrap";
+
+const CountdownCard = () => {
+  const calculateTimeLeft = () => {
+    const targetDate = new Date("2025-01-31T00:00:00"); // Replace with your target date
+    const now = new Date();
+    const difference = targetDate - now;
+
+    let timeLeft = {};
+    if (difference > 0) {
+      timeLeft = {
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / 1000 / 60) % 60),
+        seconds: Math.floor((difference / 1000) % 60),
+      };
+    } else {
+      timeLeft = {
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+      };
+    }
+    return timeLeft;
+  };
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <Card className="text-center p-4" style={{ backgroundColor: "#fbe9e1" }}>
+      <Card.Body>
+        <Card.Title style={{ fontSize: "1.5rem", color: "#4caf50" }}>
+          35% OFF
+        </Card.Title>
+        <Card.Text style={{ fontSize: "1.25rem", fontWeight: "bold" }}>
+          Great deal on organic food.
+        </Card.Text>
+        <Card.Text style={{ fontSize: "1rem", color: "#757575" }}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          maecenas accumsan lacus vel facilisis.
+        </Card.Text>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "10px",
+            fontSize: "1.25rem",
+            marginTop: "1rem",
+          }}
+        >
+          <div>
+            {timeLeft.days} <small>Days</small>
+          </div>
+          <div>
+            {timeLeft.hours} <small>Hrs</small>
+          </div>
+          <div>
+            {timeLeft.minutes} <small>Min</small>
+          </div>
+          <div>
+            {timeLeft.seconds} <small>Sec</small>
+          </div>
+        </div>
+      </Card.Body>
+    </Card>
+  );
+};
+
+export default CountdownCard;
