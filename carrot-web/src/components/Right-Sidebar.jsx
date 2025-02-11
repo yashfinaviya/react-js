@@ -1,4 +1,4 @@
-import { Button, Card, Container, Form, Row } from "react-bootstrap"
+import { Button, Card, Container, Form, Row } from "react-bootstrap";
 
 const RightSidebar = () => {
     return (
@@ -146,4 +146,4 @@ const RightSidebar = () => {
     )
 }
 
-export default RightSidebar
+export default RightSidebar;
