@@ -1,13 +1,13 @@
 import { Routes, Route } from "react-router";
 import "./App.css";
-import Home from "./Components/Home";
-import AddData from "./Components/AddData";
-import Header from "./Components/Header";
-import EditData from "./Components/EditData";
+import Home from "./Components/Recipelist";
+import EditRecipe from "./Components/EditRecipe";
 import Register from "./Components/Auth/register";
 import Login from "./Components/Auth/login";
-import SingleBook from "./Components/SingleBook";
+import SingleRecipe from "./Components/SingleRecipe";
+import AddRecipe from "./Components/RecipeForm"
 import { useSelector } from "react-redux";
+import Header from "./Components/Navbar";
 
 function App() {
   const { user } = useSelector(state => state.authReducer);
@@ -18,9 +18,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/reg" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/add" element={<AddData />} />
-        <Route path="/edit/:id" element={<EditData />} />
-        <Route path='/view/:id' element={<SingleBook />}></Route>
+        <Route path="/add" element={<AddRecipe />} />
+        <Route path="/edit/:id" element={<EditRecipe />} />
+        <Route path='/view/:id' element={<SingleRecipe />}></Route>
       </Routes>
     </>
   );
